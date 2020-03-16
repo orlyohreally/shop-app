@@ -1,0 +1,6 @@
+<products-product class="product" [product]="product">
+  <mat-card-actions>
+    <button mat-button [productsEditProductTrigger]="product">Edit</button>
+    <button mat-button (click)="deleteProduct()">Delete</button>
+  </mat-card-actions>
+</products-product>

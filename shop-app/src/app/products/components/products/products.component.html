@@ -1,0 +1,20 @@
+<div class="mat-h1">Products</div>
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+  fxLayoutGap="10px grid"
+  fxLayout.xs="column"
+  class="block_full-width"
+  *ngIf="products | async as productList; loading"
+>
+  <products-customer-product-view
+    fxFlex.xs="100"
+    fxFlex="50"
+    *ngFor="let product of productList"
+    [product]="product"
+  ></products-customer-product-view>
+</div>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

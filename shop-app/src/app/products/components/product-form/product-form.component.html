@@ -1,0 +1,55 @@
+<div>
+  <h1 mat-dialog-title>
+    Product
+  </h1>
+  <div *ngIf="form; else loading">
+    <form [formGroup]="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input type="text" required matInput formControlName="title" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+          placeholder="Product description"
+        >
+        Product description
+        </textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input type="number" required matInput formControlName="price" />
+      </mat-form-field>
+      <shared-image-loader
+        [imageUrl]="form.get('image').value"
+        (loaded)="imageLoaded($event)"
+      ></shared-image-loader>
+
+      <div class="action-buttons">
+        <div
+          class="error-message"
+          *ngIf="errorMessage"
+          fxLayout="row"
+          fxLayoutAlign="center center"
+        >
+          <mat-error>{{ errorMessage }}</mat-error>
+        </div>
+        <button
+          mat-raised-button
+          class="button"
+          color="primary"
+          (click)="submitForm()"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<ng-template #loading>
+  <div fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

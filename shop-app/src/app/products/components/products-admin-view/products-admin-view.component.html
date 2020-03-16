@@ -1,0 +1,25 @@
+<div fxLayoutAlign="start center" fxLayout="row" class="page-title">
+  <div class="mat-h1">Products</div>
+  <button mat-icon-button productsNewProductTrigger class="button_add-product">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+</div>
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+  fxLayout.xs="column"
+  fxLayoutGap="10px grid"
+  class="block_full-width"
+  *ngIf="products | async as productList; loading"
+>
+  <product-admin-product-view
+    fxFlex.xs="100"
+    fxFlex="50"
+    *ngFor="let product of productList"
+    [product]="product"
+  ></product-admin-product-view>
+</div>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

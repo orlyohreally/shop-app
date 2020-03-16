@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button routerLink="" routerLinkActive="link_active">
+      Customer
+    </button>
+    <button
+      mat-button
+      routerLink="/products/cart"
+      routerLinkActive="link_active"
+    >
+      Cart
+    </button>
+    <button
+      mat-button
+      routerLink="/products/admin"
+      routerLinkActive="link_active"
+    >
+      Admin
+    </button>
+    <button mat-button routerLink="/orders" routerLinkActive="link_active">
+      Orders
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="page-content">
+  <router-outlet></router-outlet>
+</div>

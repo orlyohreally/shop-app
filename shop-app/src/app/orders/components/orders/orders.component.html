@@ -1,0 +1,4 @@
+<div class="mat-h1">Orders</div>
+<div *ngFor="let order of orders | async">
+  {{ order | json }}
+</div>

@@ -1,0 +1,12 @@
+.file-loader {
+  padding: 16px 0;
+}
+
+.file-loader__input {
+  display: none;
+}
+
+.image-preview {
+  width: 100%;
+  height: auto;
+}
